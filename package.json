@@ -1,0 +1,14 @@
+{
+  "name": "shortcode",
+  "version": "0.0.1",
+  "description": "A shortcode library for vanilla JS.",
+  "main": "index.js",
+  "scripts": {
+    "build": "yarn run esbuild index.ts --bundle --format=esm --outfile=dist/lib.js"
+  },
+  "author": "Claire Lipskey <claire.lipskey@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.12.15"
+  }
+}
