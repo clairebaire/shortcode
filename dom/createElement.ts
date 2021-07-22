@@ -1,6 +1,6 @@
 const createElement = (element: string, options: {}) => {
     let el = document.createElement(element);
-    Object.assign(el, options);
+    el = Object.assign(el, options);
     return el;
 }
 

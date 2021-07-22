@@ -4,11 +4,17 @@
   "description": "A shortcode library for vanilla JS.",
   "main": "index.js",
   "scripts": {
-    "build": "yarn run esbuild index.ts --bundle --format=esm --outfile=dist/lib.js"
+    "tsc": "tsc --project tsconfig.json --emitDeclarationOnly",
+    "esbuild": "esbuild index.ts --bundle --format=esm --minify --sourcemap=external --outfile=dist/lib.js",
+    "build": "yarn run tsc && yarn run esbuild"
   },
   "author": "Claire Lipskey <claire.lipskey@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "esbuild": "^0.12.15"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "typescript": "^4.3.5"
   }
 }

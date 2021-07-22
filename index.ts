@@ -1,8 +1,9 @@
-import { addClass } from './dom/addClass';
+import { addClass, removeClass } from './dom/classes';
 import { createScriptElement, createAsyncScriptElement } from './dom/createElement';
 
 const scripts = [
     addClass,
+    removeClass,
     createScriptElement,
     createAsyncScriptElement
 ]
