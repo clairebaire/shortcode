@@ -1,14 +1,9 @@
+import { ScriptElementOptions } from './../types/dom/createElement.types';
+
 const createElement = (element: string, options: {}) => {
     let el = document.createElement(element);
     el = Object.assign(el, options);
     return el;
-}
-
-interface ScriptElementOptions {
-    async?: boolean;
-    defer?: boolean;
-    crossorigin?: boolean;
-    type?: string;
 }
 
 export const createScriptElement = (src: string, options: ScriptElementOptions) => {

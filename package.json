@@ -4,7 +4,7 @@
   "description": "A shortcode library for vanilla JS.",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc --project tsconfig.json --emitDeclarationOnly",
+    "tsc": "tsc --project tsconfig.json --noEmit",
     "esbuild": "esbuild index.ts --bundle --format=esm --minify --sourcemap=external --outfile=dist/lib.js",
     "build": "yarn run tsc && yarn run esbuild"
   },
@@ -14,6 +14,7 @@
     "esbuild": "^0.12.15"
   },
   "devDependencies": {
+    "@web/dev-server": "^0.1.20",
     "concurrently": "^6.2.0",
     "typescript": "^4.3.5"
   }
