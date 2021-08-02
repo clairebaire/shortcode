@@ -19,5 +19,5 @@ export const deleteFromStorage = (item: string) => {
 export const searchStorage = (item: string): any => {
     let storage = (window as any).shortcode.storage;
     let storageObject = storage[item];
-    return storageObject;
+    return storageObject
 }

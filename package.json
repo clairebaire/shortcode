@@ -6,7 +6,8 @@
   "scripts": {
     "tsc": "tsc --project tsconfig.json --noEmit",
     "esbuild": "esbuild index.ts --bundle --format=esm --minify --sourcemap=external --outfile=dist/lib.js",
-    "build": "yarn run tsc && yarn run esbuild"
+    "build": "yarn run tsc && yarn run esbuild",
+    "watch": "concurrently --raw 'tsc --watch  --project tsconfig.json --noEmit --preserveWatchOutput' 'wds --watch --node-resolve'"
   },
   "author": "Claire Lipskey <claire.lipskey@gmail.com>",
   "license": "MIT",

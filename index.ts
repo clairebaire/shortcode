@@ -1,15 +1,8 @@
-import { detach, reAttach } from './dom/detach';
+import { dom } from './dom/index';
 import { shortcode } from './utils/construct';
-import { addClass, removeClass } from './dom/classes';
-import { createScriptElement, createAsyncScriptElement } from './dom/createElement';
 
 const scripts = {
-    addClass,
-    removeClass,
-    createScriptElement,
-    createAsyncScriptElement,
-    detach,
-    reAttach
+    dom
 };
 
 if (window) {
