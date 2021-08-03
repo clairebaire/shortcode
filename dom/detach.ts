@@ -5,14 +5,20 @@ export interface DetachedItem {
     parent: HTMLElement;
 }
 
+/* Detach / DetachMultiple / Reattach 
+ * 
+ * Used to remove an HTML element from the DOM but NOT delete it from memory, so as to be reattached later.
+ * 
+*/
+
 export const detach = (element: HTMLElement | string, identifier: string) => {
     if (element instanceof HTMLElement) {
-        addToStorage({ name: identifier, value: { element: element, parent: element.parentElement } });
+        detachAndStore(identifier, element);
         element.remove()
     } else {
-        let el = document.querySelector(element);
+        let el = document.querySelector(element) as HTMLElement;
         if (el) {
-            addToStorage({ name: identifier, value: { element: el, parent: el.parentElement }  });
+            detachAndStore(identifier, el);
             el.remove();
         }
     }
@@ -39,4 +45,8 @@ export const reAttach = (identifier: string) => {
             el.parent.append(el.element);
         }
     }
+}
+
+const detachAndStore = (identifier: string, element: HTMLElement) => {
+    addToStorage({ name: identifier, value: { element: element, parent: element.parentElement } });
 }

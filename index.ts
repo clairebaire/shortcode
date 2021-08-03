@@ -1,8 +1,10 @@
+import { forms } from './forms/index';
 import { dom } from './dom/index';
 import { shortcode } from './utils/construct';
 
 const scripts = {
-    dom
+    dom,
+    forms
 };
 
 if (window) {
